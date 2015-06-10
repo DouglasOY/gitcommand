@@ -287,4 +287,6 @@ git clone  reposadmin@192.168.0.100:/home/reposadmin/abc.git
 # remove stale branches
 git remote prune origin
 
+# List Remote Git Branches By Author sorted by committerdate
+git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n
 
