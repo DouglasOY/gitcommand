@@ -258,6 +258,10 @@ Try using git ls-files --other - it should list all files that git doesn't know 
 git status --ignored
 git ls-files --others -i --exclude-from=.git/info/exclude
 git ls-files --others -i --exclude-standard
+
+
+git clean -df  --> clean untracked files, not in repository, and not in gitignore
+git clean -dfx --> clean all files which have not been git added into repository, including the files ignored by .gitignore  
 git clean -ndX is a simpler solution
 
 
