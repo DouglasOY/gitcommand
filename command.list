@@ -294,3 +294,7 @@ git remote prune origin
 # List Remote Git Branches By Author sorted by committerdate
 git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n
 
+# List files in order of last modification date
+while read file; do echo $(git log --pretty=format:%ad --date=raw -n 1 -- $file) $file; done < <(git ls-files) | sort -n -k1 -r
+
+
