@@ -1,0 +1,50 @@
+
+linux
+
+1398532 .git
+
+
+1: rm .git/config  url
+2:  rm  packed-refs     tags  remotes
+ 保留 3.0
+
+3: 
+git reflog expire --expire=now --all
+git fsck --full --no-reflogs --unreachable 
+
+1398388 .git
+
+
+git prune --expire=now
+
+1398388 .git
+
+4: 
+git gc --prune=now
+
+1249712 .git
+
+5:
+
+rm  packed-refs  remotes/origin/HEAD    
+rm .git/refs/remotes
+
+6: 
+
+git branch aaa
+git checkout aaa
+git reset --hard  5dba9dd Linux 3.0.101
+
+7:
+
+git branch -D  master
+
+git reflog expire --expire=now --all
+git prune --expire=now
+
+1247060 .git
+
+git gc --prune=now
+
+533756  .git
+
