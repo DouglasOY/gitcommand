@@ -300,3 +300,14 @@ git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | 
 while read file; do echo $(git log --pretty=format:%ad --date=raw -n 1 -- $file) $file; done < <(git ls-files) | sort -n -k1 -r
 
 
+cd /d/tmp
+mkdir vimrc
+cd vimrc
+git init .
+git fetch https://github.com/DouglasOY/vimrc.git
+git checkout -b master FETCH_HEAD
+git remote add origin https://github.com/DouglasOY/vimrc.git
+git pull
+git branch --set-upstream-to=origin/master master
+git pull --all
+
